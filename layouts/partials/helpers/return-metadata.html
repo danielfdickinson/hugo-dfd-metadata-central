@@ -1,5 +1,5 @@
 {{- $ctx := . -}}
-{{- $curPage := .Page -}}
+{{- $curPage := .page -}}
 {{- $requestedData := .requestedData -}}
 
 {{- $dataScratch := newScratch -}}
@@ -22,11 +22,11 @@
     "see_also"
 ) -}}
 
-{{- $dataToGather = $requestedData | default $allData -}}
+{{- $dataToGather := $requestedData | default $allData -}}
 
 {{- range $dataToGather -}}
     {{- $gatherType := . -}}
-    {{- with $ctx -}}
+    {{- with $curPage -}}
         {{- $data := (partial (printf "helpers/lib/metadata/gather-%s" $gatherType) .) -}}
         {{- $dataScratch.SetInMap "dataGathered" $gatherType $data -}}
     {{- end -}}
