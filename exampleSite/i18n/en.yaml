@@ -3,3 +3,6 @@
 
 - id: untitled_site
   translation: Untitled Site
+
+- id: metadata_gather_test
+  translation: Metadata Gather Test
