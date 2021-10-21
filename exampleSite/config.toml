@@ -16,7 +16,7 @@ defaultContentLanguage = "en"
   [languages.en]
     languageName = ":en:"
     languageAltTitle = "English"
-    title = "DFD Metadata Central Handling"
+    title = "DFD Metadata Central Handling Demo Site"
     description = "Demo Site for Hugo module for central handling of metadata"
     weight = 1
     
