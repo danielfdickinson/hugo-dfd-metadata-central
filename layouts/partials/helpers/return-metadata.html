@@ -1,0 +1,35 @@
+{{- $ctx := . -}}
+{{- $curPage := .Page -}}
+{{- $requestedData := .requestedData -}}
+
+{{- $dataScratch := newScratch -}}
+{{- $allData := (
+    slice "name"
+    "description"
+    "dateCreated"
+    "datePublished"
+    "dateModified"
+    "section"
+    "wordCount"
+    "images"
+    "keywords"
+    "type"
+    "url"
+    "audio"
+    "locale"
+    "site_name"
+    "videos"
+    "see_also"
+) -}}
+
+{{- $dataToGather = $requestedData | default $allData -}}
+
+{{- range $dataToGather -}}
+    {{- $gatherType := . -}}
+    {{- with $ctx -}}
+        {{- $data := (partial (printf "helpers/lib/microformat-data/gather-%s" $gatherType) .) -}}
+        {{- $dataScratch.SetInMap "dataGathered" $gatherType $data -}}
+    {{- end -}}
+{{- end -}}
+{{- $dataGathered := $dataScratch.Get "dataGathered" -}}
+{{- return $dataGathered -}}
