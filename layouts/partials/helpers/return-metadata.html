@@ -27,7 +27,7 @@
 {{- range $dataToGather -}}
     {{- $gatherType := . -}}
     {{- with $ctx -}}
-        {{- $data := (partial (printf "helpers/lib/microformat-data/gather-%s" $gatherType) .) -}}
+        {{- $data := (partial (printf "helpers/lib/metadata/gather-%s" $gatherType) .) -}}
         {{- $dataScratch.SetInMap "dataGathered" $gatherType $data -}}
     {{- end -}}
 {{- end -}}
