@@ -103,4 +103,7 @@ summaryLength = 25
       target = "archetypes"
 
   [[module.imports]]
+    # For this module we don't want microformats as that creates a dependency loop
+    ignoreConfig = true
+    ignoreMounts = true
     path = "github.com/danielfdickinson/hugo-dfd-demo-site-theme"
