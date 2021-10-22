@@ -4,22 +4,23 @@
 
 {{- $dataScratch := newScratch -}}
 {{- $allData := (
-    slice "name"
+    slice 
+    "audio"
+    "name"
     "description"
     "dateCreated"
     "datePublished"
     "dateModified"
-    "section"
-    "wordCount"
     "images"
     "keywords"
+    "locale"
+    "section"
+    "see_also"
     "siteName"
     "type"
     "url"
-    "audio"
-    "locale"
     "videos"
-    "see_also"
+    "wordCount"
 ) -}}
 
 {{- $dataToGather := $requestedData | default $allData -}}
