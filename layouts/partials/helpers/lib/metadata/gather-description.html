@@ -4,4 +4,5 @@
 {{- else -}}
     {{- $description = ($description | default .Site.Params.description | default .Site.Params.summary) -}}
 {{- end -}}
-{{- return ($description | plainify) -}}
+{{- $description = replaceRE " +" " " (replaceRE "(\n|\r)" " " ($description | .RenderString | plainify)) -}}
+{{- return $description -}}
