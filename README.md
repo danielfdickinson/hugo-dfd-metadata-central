@@ -4,11 +4,7 @@ A Hugo module for the central handling of metadata
 
 ## Status
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/dccfb47f-a6ea-453e-b966-a54103e1ec38/deploy-status)](https://app.netlify.com/sites/hugo-dfd-metadata-central/deploys)
-
-## Demo Site
-
-<https://hugo-dfd-metadata-central.wildtechgarden.ca/>
+ARCHIVED: This module has been replaced by <https://github.com/danielfdickinson/metadata-mod-hugo-dfd> and remains present, archived, for the sake of repos depending on it.
 
 ## Features
 
